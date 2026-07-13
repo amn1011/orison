@@ -1,0 +1,182 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Header & Nav */
+header {
+    background: #2c3e50;
+    color: #fff;
+    padding: 1rem 0;
+    border-bottom: 4px solid #3498db;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo span {
+    color: #3498db;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    padding: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Main Layout */
+main {
+    /* display: grid; */
+    /* grid-template-columns: 3fr 3fr; */
+    /* gap: 2rem; */
+    /* margin: 12rem; */
+    padding-bottom: 5rem;
+    border-radius: 1rem;
+    /* background-color: red; */
+    
+}
+
+h2 {
+    color: #2989ea;
+    margin: 1rem;
+    text-align: center;
+}
+
+/* Blog Post */
+.post {
+    background: #fff;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.category {
+    background: #3498db;
+    color: #fff;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 1rem;
+}
+
+/* main Section */
+.main-container {
+    background-color: red;
+    height: 40rem;
+    width: 25rem;
+    
+}
+
+/* Skills Button */
+.skills-btn {
+    height: 10rem;
+    width: 15rem;
+    background-color: rgb(178, 214, 236);
+    border: 2px solid rgb(186, 229, 255);
+    color: black;
+    border-radius: 1rem;
+    cursor: pointer;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+/* Code Snippet Styling */
+.code-block {
+    background: #272822;
+    color: #f8f8f2;
+    padding: 0rem;
+    border-radius: 8px;
+    
+    /* स्क्रॉल बार के लिए मुख्य सेटिंग्स */
+    max-height: 250px;    /* बॉक्स की अधिकतम ऊंचाई */
+    overflow-y: auto;     /* अगर कोड लंबा हो तो वर्टिकल स्क्रॉल आएगा */
+    overflow-x: auto;     /* अगर लाइन बहुत चौड़ी हो तो हॉरिजॉन्टल स्क्रॉल आएगा */
+    
+    font-family: 'Courier New', Courier, monospace;
+    white-space: pre;     /* यह कोड के फॉर्मेट (spaces/tabs) को सुरक्षित रखता है */
+    border: 1px solid #3e3e3e;
+}
+
+/* स्क्रॉल बार को सुंदर (Custom) बनाने के लिए */
+.code-block::-webkit-scrollbar {
+    width: 8px;           /* वर्टिकल बार की चौड़ाई */
+    height: 8px;          /* हॉरिजॉन्टल बार की ऊंचाई */
+}
+
+.code-block::-webkit-scrollbar-thumb {
+    background: #3498db;  /* स्क्रॉल करने वाले हैंडल का रंग */
+    border-radius: 10px;
+}
+
+.code-block::-webkit-scrollbar-track {
+    background: #1e1e1e;  /* स्क्रॉल बार के पीछे का रास्ता */
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sidebar */
+.profile-card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+footer {
+
+    text-align: center;
+    padding: 1rem;
+    background: #2c3e50;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
