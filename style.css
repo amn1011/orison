@@ -1,182 +1,444 @@
-/* General Reset */
+/* Styling System Defaults */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', system-ui, sans-serif;
 }
 
 body {
-    background-color: #f4f7f6;
-    color: #333;
-    line-height: 1.6;
+  background-color: #f7f9fa;
+  overflow-x: hidden;
 }
 
-.container {
-    width: 90%;
-    max-width: 1100px;
-    margin: auto;
-    overflow: hidden;
+/* Navbar Structure */
+.hdr-cntnt {
+  background-color: maroon;
+  padding: 12px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  gap: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* Header & Nav */
-header {
-    background: #2c3e50;
-    color: #fff;
-    padding: 1rem 0;
-    border-bottom: 4px solid #3498db;
+.logo-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+.search-container {
+  flex: 2;
+  display: flex;
+  align-items: center;
+  max-width: 500px;
+  background: white;
+  border-radius: 25px;
+  padding: 4px 6px;
 }
 
-.logo span {
-    color: #3498db;
+.search-container input {
+  width: 100%;
+  border: none;
+  outline: none;
+  padding: 8px 15px;
+  font-size: 0.95rem;
+  border-radius: 20px;
+  background-color: white;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
+.search-container button {
+  background: maroon;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
 }
 
-nav ul li {
-    padding: 0 15px;
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }
 
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
+.cart-box {
+  position: relative;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
 }
 
-/* Main Layout */
-main {
-    /* display: grid; */
-    /* grid-template-columns: 3fr 3fr; */
-    /* gap: 2rem; */
-    /* margin: 12rem; */
-    padding-bottom: 5rem;
-    border-radius: 1rem;
-    /* background-color: red; */
-    
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #ffcc00;
+  color: #111;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
 }
 
-h2 {
-    color: #2989ea;
-    margin: 1rem;
-    text-align: center;
+.nav-links {
+  display: flex;
+  gap: 20px;
 }
 
-/* Blog Post */
-.post {
-    background: #fff;
-    padding: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+.hdr-snd {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-.category {
-    background: #3498db;
-    color: #fff;
-    padding: 0.2rem 0.6rem;
-    border-radius: 4px;
-    font-size: 0.8rem;
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
 }
 
-.date {
-    font-size: 0.9rem;
-    color: #777;
-    margin-bottom: 1rem;
+.menu-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
 }
 
-/* main Section */
-.main-container {
-    background-color: red;
-    height: 40rem;
-    width: 25rem;
-    
+/* --- DYNAMIC SLIDING CART DRAWER SYSTEM CSS --- */
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: -350px; /* Hide by default offscreen */
+  width: 320px;
+  height: 100%;
+  background-color: white;
+  box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transition: right 0.4s ease; /* Slide animation transition */
 }
 
-/* Skills Button */
-.skills-btn {
-    height: 10rem;
-    width: 15rem;
-    background-color: rgb(178, 214, 236);
-    border: 2px solid rgb(186, 229, 255);
-    color: black;
-    border-radius: 1rem;
-    cursor: pointer;
-    font-size: 3rem;
-    font-weight: bold;
+.cart-drawer.open {
+  right: 0; /* Slide out action */
 }
 
-/* Code Snippet Styling */
-.code-block {
-    background: #272822;
-    color: #f8f8f2;
-    padding: 0rem;
-    border-radius: 8px;
-    
-    /* स्क्रॉल बार के लिए मुख्य सेटिंग्स */
-    max-height: 250px;    /* बॉक्स की अधिकतम ऊंचाई */
-    overflow-y: auto;     /* अगर कोड लंबा हो तो वर्टिकल स्क्रॉल आएगा */
-    overflow-x: auto;     /* अगर लाइन बहुत चौड़ी हो तो हॉरिजॉन्टल स्क्रॉल आएगा */
-    
-    font-family: 'Courier New', Courier, monospace;
-    white-space: pre;     /* यह कोड के फॉर्मेट (spaces/tabs) को सुरक्षित रखता है */
-    border: 1px solid #3e3e3e;
+.drawer-header {
+  padding: 20px;
+  background-color: maroon;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-/* स्क्रॉल बार को सुंदर (Custom) बनाने के लिए */
-.code-block::-webkit-scrollbar {
-    width: 8px;           /* वर्टिकल बार की चौड़ाई */
-    height: 8px;          /* हॉरिजॉन्टल बार की ऊंचाई */
+.close-drawer {
+  font-size: 1.8rem;
+  cursor: pointer;
 }
 
-.code-block::-webkit-scrollbar-thumb {
-    background: #3498db;  /* स्क्रॉल करने वाले हैंडल का रंग */
-    border-radius: 10px;
+.drawer-content {
+  padding: 20px;
+  flex: 1;
+  overflow-y: auto;
 }
 
-.code-block::-webkit-scrollbar-track {
-    background: #1e1e1e;  /* स्क्रॉल बार के पीछे का रास्ता */
+.empty-msg {
+  color: #888;
+  text-align: center;
+  margin-top: 30px;
 }
 
-.read-more {
-    display: inline-block;
-    margin-top: 1rem;
-    color: #3498db;
-    text-decoration: none;
-    font-weight: bold;
+.cart-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  font-size: 0.9rem;
 }
 
-/* Sidebar */
-.profile-card {
-    background: #fff;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    text-align: center;
+.remove-item-btn {
+  color: red;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
+.drawer-footer {
+  padding: 20px;
+  border-top: 1px solid #eee;
+  background-color: #f9f9f9;
+}
+
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: maroon;
+}
+
+.checkout-btn {
+  width: 100%;
+  background-color: maroon;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Store Content Showcase Styling */
+.store-showcase {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.store-showcase h2 {
+  text-align: center;
+  color: #222;
+  margin-bottom: 30px;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
+}
+
+.product-card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.04);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 1px solid #eef1f2;
+}
+
+.product-img-placeholder {
+  height: 150px;
+  background: #f1f1f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: maroon;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.desc {
+  font-size: 0.8rem;
+  color: #777;
+  height: 35px;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-weight: bold;
+  color: maroon;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.add-to-cart-btn {
+  background: maroon;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-to-cart-btn:hover {
+  background: #5c0000;
+}
+
+/* --- PREMIUM E-COMMERCE FOOTER CORE STYLES --- */
 footer {
-
-    text-align: center;
-    padding: 1rem;
-    background: #2c3e50;
-    color: #fff;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+  background-color: #1a1a1a; /* Professional Dark Aesthetic */
+  color: #d1d1d1;
+  padding: 60px 0 20px 0;
+  margin-top: 50px;
+  border-top: 4px solid maroon; /* Visual thematic divider */
 }
 
-/* Responsive for Mobile */
-@media (max-width: 768px) {
-    main {
-        grid-template-columns: 1fr;
-    }
+.ftr-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+}
+
+.ftr-col h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.ftr-col h4 {
+  color: white;
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  position: relative;
+  font-weight: 600;
+}
+
+/* Red Accent underline below column headers */
+.ftr-col h4::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 35px;
+  height: 2px;
+  background-color: maroon;
+}
+
+.ftr-col p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.ftr-col ul {
+  list-style: none;
+}
+
+.ftr-col ul li {
+  margin-bottom: 12px;
+}
+
+.ftr-col ul li a {
+  color: #b5b5b5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+/* Hover dynamic slide transitions */
+.ftr-col ul li a:hover {
+  color: white;
+  padding-left: 6px;
+}
+
+/* Micro-interaction Handles for Branding block */
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.social-icons a {
+  color: #1a1a1a;
+  background-color: #d1d1d1;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+  background-color: maroon;
+  color: white;
+  transform: translateY(-4px);
+}
+
+/* Newsletter Input Form Component elements */
+.subscribe-form {
+  display: flex;
+  margin-top: 15px;
+  background: #2a2a2a;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid #3a3a3a;
+}
+
+.subscribe-form input {
+  width: 100%;
+  padding: 10px 15px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: white;
+  font-size: 0.85rem;
+}
+
+.subscribe-form button {
+  background-color: maroon;
+  color: white;
+  border: none;
+  padding: 0 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.subscribe-form button:hover {
+  background-color: #5c0000;
+}
+
+/* Bottom bar formatting nodes */
+.ftr-bottom {
+  text-align: center;
+  max-width: 1200px;
+  margin: 40px auto 0 auto;
+  padding: 20px 30px 0 30px;
+  border-top: 1px solid #2d2d2d;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* --- MOBILE SCREEN MEDIA RESPONSIVE FOOTER FIXES --- */
+@media screen and (max-width: 480px) {
+  footer {
+    padding: 40px 0 20px 0;
+  }
+  .ftr-container {
+    grid-template-columns: 1fr; /* Stack into clean single column cards */
+    gap: 30px;
+    padding: 0 20px;
+  }
+}
+
+/* Mobile Breakpoints responsive wrap logic */
+@media screen and (max-width: 768px) {
+  .hdr-cntnt { flex-wrap: wrap; padding: 12px 20px; }
+  .search-container { order: 3; flex: none; width: 100%; margin-top: 10px; }
+  .menu-toggle { display: flex; }
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; right: 15px; width: 180px;
+    background-color: maroon; padding: 15px 0;
+    gap: 15px; border-radius: 8px; z-index: 200;
+  }
+  .nav-links.active { display: flex; }
 }
