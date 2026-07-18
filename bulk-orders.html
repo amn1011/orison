@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulk Orders & Quotations | Orison Teeworks</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="bulk-style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">Orison <span>Teeworks</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trending.html">Trending Tees</a></li>
+        <li><a href="bulk-orders.html" class="active">Bulk Orders</a></li>
+        <li><a href="track-order.html">Track Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="bulk-hero">
+    <h1>Custom Bulk Orders & Quotations</h1>
+    <p>Need custom t-shirts for college fests, corporate events, or keychains for branding? Get the best wholesale rates with premium quality.</p>
+  </section>
+
+  <!-- MAIN CONTAINER -->
+  <main class="bulk-container">
+    
+    <!-- LEFT SIDE: BENEFITS -->
+    <div class="bulk-info">
+      <h3>Why Choose Orison Teeworks for Bulk?</h3>
+      
+      <div class="benefit-item">
+        <i class="fa-solid fa-tags"></i>
+        <div>
+          <h4>Tiered Wholesale Pricing</h4>
+          <p>Jitna bada order, utna zyada discount. Hum transparent price slabs dete hain.</p>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <i class="fa-solid fa-shirt"></i>
+        <div>
+          <h4>Premium Printing Methods</h4>
+          <p>Direct-to-Film (DTF) printing aur high-quality sublimation jo laundry washes ke baad bhi fade nahi hoti.</p>
+        </div>
+      </div>
+
+      <div class="benefit-item">
+        <i class="fa-solid fa-truck-ramp-box"></i>
+        <div>
+          <h4>Express Bulk Delivery</h4>
+          <p>Dedicated courier support taaki aapke event ya fest se pehle stock safely deliver ho jaye.</p>
+        </div>
+      </div>
+
+      <div class="price-slabs">
+        <h4><i class="fa-solid fa-circle-info"></i> Standard Discount Estimate</h4>
+        <ul>
+          <li><strong>20 - 50 Pcs:</strong> Flat 15% OFF</li>
+          <li><strong>51 - 150 Pcs:</strong> Flat 25% OFF</li>
+          <li><strong>151+ Pcs:</strong> Custom Industry Rates</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- RIGHT SIDE: SECURE FORM WITH FILE UPLOAD -->
+<div class="bulk-form-wrapper">
+  <h3>Request a Custom Quote</h3>
+  <p style="color: var(--text-light); font-size: 14px; margin-bottom: 20px;">Fill out the form below, and our team will send a formal PDF quotation within 4 hours.</p>
+  
+  <!-- IMPORTANT: Added enctype for handling file uploads securely -->
+  <form action="https://formsubmit.co/YOUR_EMAIL@EMAIL.COM" method="POST" enctype="multipart/form-data" id="bulkForm">
+    
+    <!-- Anti-Spam / Customization configuration -->
+    <input type="hidden" name="_subject" value="New Bulk Order & Design Attachment - Orison Teeworks">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+
+    <div class="form-group">
+      <label for="fullName">Full Name *</label>
+      <input type="text" name="Name" id="fullName" placeholder="Enter your full name" required>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="email">Business/Personal Email *</label>
+        <input type="email" name="Email" id="email" placeholder="name@company.com" required>
+      </div>
+      <div class="form-group">
+        <label for="phone">WhatsApp Number *</label>
+        <input type="tel" name="WhatsApp" id="phone" placeholder="10-digit mobile number" required>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="productType">Product Required *</label>
+        <select name="Product_Type" id="productType" required>
+          <option value="" disabled selected>Select Product</option>
+          <option value="Custom T-Shirts">Custom T-Shirts</option>
+          <option value="Custom Keychains">Custom Keychains</option>
+          <option value="Custom Mugs">Custom Mugs</option>
+          <option value="Mixed Merchandise">Mixed / Combo Deal</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="quantity">Estimated Quantity *</label>
+        <input type="number" name="Quantity" id="quantity" min="20" placeholder="Minimum 20 pcs" required>
+      </div>
+    </div>
+
+    <!-- NEW FILE UPLOAD FIELD -->
+    <div class="form-group">
+      <label for="designFile"><i class="fa-solid fa-image"></i> Upload Reference Design / Logo</label>
+      <div class="file-upload-wrapper">
+        <input type="file" name="Design_Attachment" id="designFile" accept="image/png, image/jpeg, image/jpg">
+        <p class="file-hint">Accepts PNG, JPG, JPEG (Max size: 5MB). Leave blank if you will share design later.</p>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="requirements">Design & Specific Requirements</label>
+      <textarea name="Requirements" id="requirements" rows="4" placeholder="Mention fabric type (e.g., 100% Cotton, Polyester), colors, deadline date, and printing details..."></textarea>
+    </div>
+
+    <button type="submit" class="submit-bulk-btn">
+      <span>Submit Request & Design</span> <i class="fa-solid fa-paper-plane"></i>
+    </button>
+  </form>
+</div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-bottom">
+      &copy; 2026 Orison Teeworks. Secure B2B Channel. Created by Aman.
+    </div>
+  </footer>
+
+</body>
+</html>

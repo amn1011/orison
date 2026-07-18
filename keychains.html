@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Keychains | Orison Teeworks</title>
+  <!-- FontAwesome Icons for UI & WhatsApp Elements -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- External Stylesheet Link -->
+  <link rel="stylesheet" href="keychains-style.css">
+</head>
+<body>
+
+  <!-- HEADER (Same Layout as Main & Trending Pages) -->
+  <header>
+    <a href="index.html" class="logo">Orison <span>Teeworks</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trending.html">Trending Tees</a></li>
+        <li><a href="keychains.html" class="active">Custom Keychains</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- KEYCHAIN HERO BANNER -->
+  <section class="keychain-hero">
+    <div class="hero-content">
+      <span class="tagline">🔑 Pocket-Sized Creativity</span>
+      <h1>Customized Keychains</h1>
+      <p>Carry your vibe everywhere. High-quality acrylic, metal, and laser-engraved custom designs built to last.</p>
+    </div>
+  </section>
+
+  <!-- MAIN GALLERY & STORE CONTAINER -->
+  <main class="keychain-container">
+    
+    <div class="info-bar">
+      <p>Select a style below and click to send your custom logo/text over WhatsApp!</p>
+      <div class="feature-tags">
+        <span><i class="fa-solid fa-gem"></i> Scratch Resistant</span>
+        <span><i class="fa-solid fa-truck-fast"></i> Quick Shipping</span>
+      </div>
+    </div>
+
+    <!-- Keychains Showcase Grid -->
+    <div class="keychain-grid">
+
+      <!-- Item 1: Bike/Car Number Plate Variant -->
+      <div class="keychain-card">
+        <div class="img-wrapper">
+          <span class="card-badge trend">Hot Seller</span>
+          <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=500&q=80" alt="Custom Vehicle Number Plate Keychain">
+          <div class="action-overlay">
+            <button class="whatsapp-order-btn" onclick="orderKeychain('Custom Number Plate Keychain')">Customize via WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+          </div>
+        </div>
+        <div class="card-details">
+          <span class="material-tag">Premium Acrylic</span>
+          <h3>Custom Vehicle Number Plate</h3>
+          <p class="desc">High-gloss mini replica of your bike or car number plate with custom text on the back.</p>
+          <div class="pricing">
+            <span class="price">₹99</span>
+            <span class="old-price">₹199</span>
+            <span class="off-tag">50% OFF</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Anime / Gaming Shape Cut -->
+      <div class="keychain-card">
+        <div class="img-wrapper">
+          <span class="card-badge new">New Drop</span>
+          <img src="https://images.unsplash.com/photo-1622560480605-d83c853bc5c3?auto=format&fit=crop&w=500&q=80" alt="Anime Die-Cut Keychain">
+          <div class="action-overlay">
+            <button class="whatsapp-order-btn" onclick="orderKeychain('Anime Shape Cut Keychain')">Customize via WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+          </div>
+        </div>
+        <div class="card-details">
+          <span class="material-tag">Die-Cut Acrylic</span>
+          <h3>Anime & Gaming Character Cuts</h3>
+          <p class="desc">Custom contour-cut keychains featuring your favorite gaming avatars, codes, or anime icons.</p>
+          <div class="pricing">
+            <span class="price">₹129</span>
+            <span class="old-price">₹249</span>
+            <span class="off-tag">48% OFF</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: Laser Engraved Wooden Theme -->
+      <div class="keychain-card">
+        <div class="img-wrapper">
+          <img src="https://images.unsplash.com/photo-1619542402915-dcaf30e4e2a1?auto=format&fit=crop&w=500&q=80" alt="Laser Engraved Wooden Keychain">
+          <div class="action-overlay">
+            <button class="whatsapp-order-btn" onclick="orderKeychain('Laser Engraved Wooden Keychain')">Customize via WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+          </div>
+        </div>
+        <div class="card-details">
+          <span class="material-tag">Natural Wood</span>
+          <h3>Laser Engraved Wooden Tags</h3>
+          <p class="desc">Classic minimalist wooden look etched precisely with names, motivational quotes, or brand logos.</p>
+          <div class="pricing">
+            <span class="price">₹149</span>
+            <span class="old-price">₹299</span>
+            <span class="off-tag">50% OFF</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 4: Couple / Photo Personalized -->
+      <div class="keychain-card">
+        <div class="img-wrapper">
+          <span class="card-badge trend">Trending</span>
+          <img src="https://images.unsplash.com/photo-1533738363-b7f9aef128ce?auto=format&fit=crop&w=500&q=80" alt="Personalized Photo Keychain">
+          <div class="action-overlay">
+            <button class="whatsapp-order-btn" onclick="orderKeychain('Personalized Photo Keychain')">Customize via WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+          </div>
+        </div>
+        <div class="card-details">
+          <span class="material-tag">Double-Sided Acrylic</span>
+          <h3>Personalized Photo Keychain</h3>
+          <p class="desc">Keep your memories safe. High-definition color prints encapsulated in heavy-duty clear panels.</p>
+          <div class="pricing">
+            <span class="price">₹119</span>
+            <span class="old-price">₹199</span>
+            <span class="off-tag">40% OFF</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER (Same Layout as Main Pages) -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Orison <span>Teeworks</span></div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="trending.html">Trending Tees</a>
+        <a href="keychains.html">Custom Keychains</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Orison Teeworks. All rights reserved. Created with ❤️ by Aman.
+    </div>
+  </footer>
+
+  <!-- DYNAMIC PRIVACY-PROTECTED ROUTING -->
+  <script>
+    function orderKeychain(keychainType) {
+      // Security Strategy: Cryptographic separation placeholder for privacy protection
+      const countryCode = "91";
+      const blockA = "80850"; 
+      const blockB = "29790";
+      const cleanPhone = countryCode + blockA + blockB;
+
+      const userText = `Hi Orison Teeworks! 👋 Mujhe aapse ek custom keychain design karwana hai:\n\n🔑 *Style:* ${keychainType}\n\nMain apna design image/text share kar raha hoon, process bta dijiye.`;
+      const secureRedirectText = encodeURIComponent(userText);
+
+      if(cleanPhone.includes("XXXXX")) {
+        alert(`Redirect Mechanism Working! (Aman, variable blockA aur blockB me real number daalte hi yeh '${keychainType}' ke inquiry design ko seedhe WhatsApp par forward kar dega!)`);
+      } else {
+        window.open(`https://wa.me/${cleanPhone}?text=${secureRedirectText}`, '_blank', 'noopener,noreferrer');
+      }
+    }
+  </script>
+</body>
+</html>

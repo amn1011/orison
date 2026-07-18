@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Your Order | Orison Teeworks</title>
+  <!-- FontAwesome Icons for UI & Tracker States -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- External Stylesheet Link -->
+  <link rel="stylesheet" href="track-style.css">
+</head>
+<body>
+
+  <!-- HEADER (Same Layout as Keychains & Main Pages) -->
+  <header>
+    <a href="index.html" class="logo">Orison <span>Teeworks</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trending.html">Trending Tees</a></li>
+        <li><a href="keychains.html">Custom Keychains</a></li>
+        <li><a href="track-order.html" class="active">Track Order</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- TRACKER CORE INTERACTION ZONE -->
+  <main class="tracker-container">
+    <div class="tracker-card">
+      <div class="tracker-header">
+        <h2><i class="fa-solid fa-truck-ramp-box"></i> Track Your Shipment</h2>
+        <p>Enter your Order ID or Courier AWB Tracking Number to view real-time status.</p>
+      </div>
+
+      <!-- INPUT FIELD CONTROLS -->
+      <!-- TRACKING FORM SECTION -->
+      <section class="tracking-section">
+        <div class="tracking-box">
+          <h2>Track Your Order</h2>
+          <p>Enter your AWB / Tracking Number sent to your Phone/Email.</p>
+          
+          <form id="courierTrackForm" onsubmit="redirectToCourier(event)">
+            <div class="input-group">
+              <i class="fa-solid fa-truck-ramp-box input-icon"></i>
+              <input type="text" id="trackingNumber" placeholder="e.g., 141234567890 (Delhivery / Shiprocket)" required>
+            </div>
+            
+            <button type="submit" class="track-btn">
+              <span>Track on Courier Partner</span> <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <!-- DYNAMIC STATUS CONTAINER (Hidden by Default, Populates via JavaScript) -->
+      <div id="trackingResult" class="tracking-result hidden">
+        
+        <div class="order-meta">
+          <div>
+            <span class="meta-label">Order Reference</span>
+            <h4 id="resOrderID">ORISON-98214</h4>
+          </div>
+          <div>
+            <span class="meta-label">Courier Partner</span>
+            <h4 id="resCourier">Delhivery (Express)</h4>
+          </div>
+          <div>
+            <span class="meta-label">Est. Delivery</span>
+            <h4 id="resDeliveryDate">July 20, 2026</h4>
+          </div>
+        </div>
+
+        <!-- PROGRESS STEPS LAYOUT -->
+        <div class="progress-track">
+          
+          <div class="step step-active" id="step-placed">
+            <div class="step-icon-wrapper"><i class="fa-solid fa-receipt"></i></div>
+            <div class="step-text">
+              <h5>Order Placed</h5>
+              <p id="time-placed">July 15, 10:30 AM</p>
+            </div>
+          </div>
+
+          <div class="step step-active" id="step-packed">
+            <div class="step-icon-wrapper"><i class="fa-solid fa-box-open"></i></div>
+            <div class="step-text">
+              <h5>Packed & Ready</h5>
+              <p id="time-packed">July 15, 4:45 PM</p>
+            </div>
+          </div>
+
+          <div class="step" id="step-shipped">
+            <div class="step-icon-wrapper"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="step-text">
+              <h5>In Transit</h5>
+              <p id="time-shipped">Processing...</p>
+            </div>
+          </div>
+
+          <div class="step" id="step-delivered">
+            <div class="step-icon-wrapper"><i class="fa-solid fa-house-chimney-user"></i></div>
+            <div class="step-text">
+              <h5>Out for Delivery</h5>
+              <p id="time-delivered">Pending</p>
+            </div>
+          </div>
+
+        </div> <!-- End of Progress Track -->
+
+        <!-- SUPPORT FALLBACK INTERACTION -->
+        <div class="tracker-support-box">
+          <p><i class="fa-solid fa-circle-info"></i> Delivery me koi issue hai? Hamare WhatsApp support panel se direct help lein.</p>
+          <a id="whatsappSupportBtn" href="#" target="_blank" class="whatsapp-support"><i class="fa-brands fa-whatsapp"></i> Chat With Support</a>
+        </div>
+
+      </div> <!-- End of Result Container -->
+
+      <!-- ERROR STATE CONSOLE -->
+      <div id="trackingError" class="tracking-error hidden">
+        <i class="fa-solid fa-circle-exclamation error-icon"></i>
+        <h4>Order ID Not Found</h4>
+        <p>Hamein is ID se koi order nahi mila. Please ensure spelling sahi ho ya phir confirmation message check karein.</p>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER (Same Layout as Keychains & Main Pages) -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Orison <span>Teeworks</span></div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="trending.html">Trending Tees</a>
+        <a href="keychains.html">Custom Keychains</a>
+        <a href="track-order.html">Track Order</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Orison Teeworks. All rights reserved. Created with ❤️ by Aman.
+    </div>
+  </footer>
+
+  <!-- REAL-WORLD SCRIPT INTEGRATION & MOCK DATA -->
+  <script>
+    // Mock Database Engine for testing (In production, replace this with a real fetch API request to Shiprocket/Delhivery/Meesho API)
+    const mockOrderDatabase = {
+      "ORISON-98214": {
+        courier: "Delhivery (Express)",
+        estDelivery: "July 20, 2026",
+        currentStatus: "packed", // Options: placed, packed, shipped, delivered
+        placedTime: "July 15, 10:30 AM",
+        packedTime: "July 15, 4:45 PM",
+        shippedTime: "In Transit...",
+        deliveredTime: "Pending"
+      },
+      "ORISON-10254": {
+        courier: "Bluedart Premium",
+        estDelivery: "July 18, 2026",
+        currentStatus: "shipped",
+        placedTime: "July 14, 09:00 AM",
+        packedTime: "July 14, 02:15 PM",
+        shippedTime: "July 15, 08:00 AM",
+        deliveredTime: "Out for Delivery"
+      }
+    };
+
+    function handleTracking(event) {
+      event.preventDefault();
+      
+      const inputVal = document.getElementById('orderInput').value.trim();
+      const resultBox = document.getElementById('trackingResult');
+      const errorBox = document.getElementById('trackingError');
+
+      // Form layout components reset
+      resultBox.classList.add('hidden');
+      errorBox.classList.add('hidden');
+
+      if (mockOrderDatabase[inputVal]) {
+        const orderData = mockOrderDatabase[inputVal];
+        
+        // Populate static UI nodes
+        document.getElementById('resOrderID').innerText = inputVal;
+        document.getElementById('resCourier').innerText = orderData.courier;
+        document.getElementById('resDeliveryDate').innerText = orderData.estDelivery;
+        
+        document.getElementById('time-placed').innerText = orderData.placedTime;
+        document.getElementById('time-packed').innerText = orderData.packedTime;
+        document.getElementById('time-shipped').innerText = orderData.shippedTime;
+        document.getElementById('time-delivered').innerText = orderData.deliveredTime;
+
+        // Reset step classes
+        const statuses = ["placed", "packed", "shipped", "delivered"];
+        let currentIdx = statuses.indexOf(orderData.currentStatus);
+
+        statuses.forEach((status, idx) => {
+          const stepElement = document.getElementById(`step-${status}`);
+          if (idx <= currentIdx) {
+            stepElement.classList.add('step-active');
+          } else {
+            stepElement.classList.remove('step-active');
+          }
+        });
+
+        // Dynamic WhatsApp Support Link Generation for Privacy & Security
+        const phoneA = "80850";
+        const phoneB = "29790"; 
+        const supportText = encodeURIComponent(`Hi Orison Teeworks support! Mera Order ID ${inputVal} hai. Mujhe iski delivery check karni hai.`);
+        document.getElementById('whatsappSupportBtn').href = `https://wa.me/91${phoneA}${phoneB}?text=${supportText}`;
+
+        resultBox.classList.remove('hidden');
+      } else {
+        // Show error UI panel
+        errorBox.classList.remove('hidden');
+      }
+    }
+
+    function redirectToCourier(event) {
+  event.preventDefault();
+  
+  const trackingId = document.getElementById('trackingNumber').value.trim();
+  
+  if (!trackingId) {
+    alert("Please enter a valid tracking number.");
+    return;
+  }
+
+  // 1. Agar tum Shiprocket use kar rahe ho (Sabse common marketplace link)
+  // Shiprocket ka tracking page universal hota hai aur sabhi logistics (Delhivery, Bluedart, Ecom Express) ko support karta hai.
+  const shiprocketTrackingUrl = `https://shiprocket.co/tracking/${trackingId}`;
+  
+  // 2. Agar tum direct Delhivery use karte ho aur number 12 digits se shuru hota hai
+  const delhiveryTrackingUrl = `https://www.delhivery.com/track/package/${trackingId}`;
+
+  // Alternative: Hum universal Shiprocket link par bhej rahe hain kyunki wahan status bohot clean dikhta hai.
+  // Tum chaho to isko direct Delhivery par bhi redirect kar sakte ho.
+  window.open(shiprocketTrackingUrl, '_blank');
+}
+  </script>
+</body>
+</html>

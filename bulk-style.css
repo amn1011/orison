@@ -1,0 +1,98 @@
+:root {
+  --primary-color: #111111;
+  --secondary-color: #ff4757;
+  --text-dark: #2d3436;
+  --text-light: #636e72;
+  --white: #ffffff;
+  --bg-light: #f1f2f6;
+  --border-color: #ced6e0;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', system-ui, sans-serif; background-color: var(--bg-light); color: var(--text-dark); line-height: 1.6; }
+
+/* Header & Navigation */
+header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: var(--primary-color); }
+.logo { font-size: 24px; font-weight: 800; text-decoration: none; color: var(--white); }
+.logo span { color: var(--secondary-color); }
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a { text-decoration: none; color: #a4b0be; font-weight: 500; transition: color 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--white); }
+
+/* Hero */
+.bulk-hero { background: var(--primary-color); color: var(--white); text-align: center; padding: 60px 20px; border-top: 1px solid #2f3542; }
+.bulk-hero h1 { font-size: 36px; margin-bottom: 10px; }
+.bulk-hero p { max-width: 600px; margin: 0 auto; color: #a4b0be; }
+
+/* Layout Design */
+.bulk-container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
+
+@media (max-width: 768px) {
+  .bulk-container { grid-template-columns: 1fr; }
+}
+
+/* Left Section: Info & Perks */
+.bulk-info { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.bulk-info h3 { font-size: 24px; margin-bottom: 25px; border-bottom: 2px solid var(--bg-light); padding-bottom: 10px; }
+.benefit-item { display: flex; gap: 20px; margin-bottom: 25px; align-items: flex-start; }
+.benefit-item i { font-size: 24px; color: var(--secondary-color); background: #fff0f2; padding: 12px; border-radius: 8px; }
+.benefit-item h4 { font-size: 18px; margin-bottom: 5px; }
+.benefit-item p { color: var(--text-light); font-size: 14px; }
+.price-slabs { background: var(--bg-light); padding: 20px; border-radius: 8px; margin-top: 20px; }
+.price-slabs h4 { margin-bottom: 10px; font-size: 16px; }
+.price-slabs ul { list-style: none; }
+.price-slabs li { font-size: 14px; margin-bottom: 5px; display: flex; justify-content: space-between; }
+
+/* Right Section: Secure Form */
+.bulk-form-wrapper { background: var(--white); padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+.bulk-form-wrapper h3 { font-size: 24px; margin-bottom: 5px; }
+.form-group { display: flex; flex-direction: column; margin-bottom: 18px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+@media (max-width: 480px) {
+  .form-row { grid-template-columns: 1fr; gap: 0; }
+}
+
+label { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+input, select, textarea { padding: 12px; border: 1px solid var(--border-color); border-radius: 6px; font-size: 15px; outline: none; transition: border 0.3s; }
+input:focus, select:focus, textarea:focus { border-color: var(--secondary-color); }
+.submit-bulk-btn { background: var(--secondary-color); color: var(--white); border: none; padding: 14px; font-size: 16px; font-weight: 600; border-radius: 6px; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 10px; transition: background 0.3s; }
+.submit-bulk-btn:hover { background: #ff2a3b; }
+
+/* Footer */
+footer { background: var(--primary-color); color: var(--white); text-align: center; padding: 25px; margin-top: 60px; font-size: 14px; }
+
+/* File Upload Component Styling */
+.file-upload-wrapper {
+  background-color: var(--bg-light);
+  border: 2px dashed var(--border-color);
+  padding: 15px;
+  border-radius: 6px;
+  text-align: center;
+  transition: border-color 0.3s ease;
+}
+
+.file-upload-wrapper:hover {
+  border-color: var(--secondary-color);
+}
+
+.file-upload-wrapper input[type="file"] {
+  width: 100%;
+  padding: 5px;
+  background: transparent;
+  border: none;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.file-hint {
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.form-group label i {
+  color: var(--secondary-color);
+  margin-right: 4px;
+}

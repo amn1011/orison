@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trending Tees | Orison Teeworks</title>
+  <!-- FontAwesome Icons for Shopping Cart & Stars -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- External Stylesheet Links -->
+  <link rel="stylesheet" href="trending-style.css">
+</head>
+<body>
+
+  <!-- HEADER (Consistent across all pages) -->
+  <header>
+    <a href="index.html" class="logo">Orison <span>Teeworks</span></a>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="trending.html" class="active">Trending Tees</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- STORE HERO BANNER -->
+  <section class="store-hero">
+    <div class="hero-content">
+      <span class="tagline">🔥 Hot Off The Press</span>
+      <h1>The Trending Collection</h1>
+      <p>Premium quality DTF prints that match your vibe. Upgrade your wardrobe today.</p>
+    </div>
+  </section>
+
+  <!-- MAIN PRODUCT SECTION -->
+  <main class="store-container">
+    
+    <!-- Filter/Sort Bar for Premium Look -->
+    <div class="store-bar">
+      <p>Showing the hottest drops of the week</p>
+      <div class="quality-badge"><i class="fa-solid fa-circle-check"></i> 100% Premium Cotton</div>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="product-grid">
+
+      <!-- Product Card 1: Coder/Tech Theme -->
+      <div class="product-card">
+        <div class="image-container">
+          <span class="badge fire">Best Seller</span>
+          <!-- Yahan apni printed t-shirt ki image ka path daalein -->
+          <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=500&q=80" alt="Eat Sleep Code Repeat Tee">
+          <div class="hover-overlay">
+            <button class="quick-view-btn" onclick="orderViaWhatsApp('Eat Sleep Code Repeat Tee')">Order on WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="category">Coder Collection</span>
+          <h3>Eat Sleep Code Repeat</h3>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <span>(48)</span>
+          </div>
+          <div class="price-row">
+            <span class="current-price">₹499</span>
+            <span class="old-price">₹799</span>
+            <span class="discount">(37% OFF)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 2: Gym/Fitness Theme -->
+      <div class="product-card">
+        <div class="image-container">
+          <span class="badge new">New Drop</span>
+          <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=500&q=80" alt="No Pain No Gain Tee">
+          <div class="hover-overlay">
+            <button class="quick-view-btn" onclick="orderViaWhatsApp('No Pain No Gain Gym Tee')">Order on WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="category">Gym & Fitness</span>
+          <h3>No Pain No Gain (Oversized)</h3>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i>
+            <span>(32)</span>
+          </div>
+          <div class="price-row">
+            <span class="current-price">₹549</span>
+            <span class="old-price">₹899</span>
+            <span class="discount">(38% OFF)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 3: Anime Theme -->
+      <div class="product-card">
+        <div class="image-container">
+          <span class="badge fire">Trending</span>
+          <img src="https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=500&q=80" alt="Anime Graphic Tee">
+          <div class="hover-overlay">
+            <button class="quick-view-btn" onclick="orderViaWhatsApp('Anime Graphic Tee')">Order on WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="category">Anime & Pop Culture</span>
+          <h3>Otaku Vibe Graphic Tee</h3>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+            <span>(55)</span>
+          </div>
+          <div class="price-row">
+            <span class="current-price">₹499</span>
+            <span class="old-price">₹799</span>
+            <span class="discount">(37% OFF)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Card 4: Minimalist Typography -->
+      <div class="product-card">
+        <div class="image-container">
+          <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=500&q=80" alt="Stay Humble Hustle Hard Tee">
+          <div class="hover-overlay">
+            <button class="quick-view-btn" onclick="orderViaWhatsApp('Hustle Hard Minimalist Tee')">Order on WhatsApp <i class="fa-brands fa-whatsapp"></i></button>
+          </div>
+        </div>
+        <div class="product-info">
+          <span class="category">Minimalist</span>
+          <h3>Hustle Hard Typography Tee</h3>
+          <div class="rating">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i>
+            <span>(19)</span>
+          </div>
+          <div class="price-row">
+            <span class="current-price">₹449</span>
+            <span class="old-price">₹699</span>
+            <span class="discount">(35% OFF)</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER (Consistent Layer) -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Orison <span>Teeworks</span></div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="trending.html">Trending Tees</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Orison Teeworks. All rights reserved. Created with ❤️ by Aman.
+    </div>
+  </footer>
+
+  <!-- SECURE WHATSAPP REDIRECT SCRIPT -->
+  <script>
+    function orderViaWhatsApp(productName) {
+      // Security Strategy: GitHub-safe split phone numbers
+      const p1 = "91";
+      const p2 = "80850";
+      const p3 = "29790";
+      const targetPhone = p1 + p2 + p3;
+
+      const message = `Hi Orison Teeworks! 🔥 Mujhe aapki trending tees me se ye design order karna hai:\n\n👕 *Product:* ${productName}\n\nMuhe iska size chart aur payment options share kar dijiye!`;
+      const encodedMessage = encodeURIComponent(message);
+
+      if(targetPhone.includes("XXXXX")) {
+        alert(`Redirect Success! (Aman, production me real number dalte hi yeh '${productName}' ka direct link WhatsApp par open kar dega!)`);
+      } else {
+        window.open(`https://wa.me/${targetPhone}?text=${encodedMessage}`, '_blank', 'noopener,noreferrer');
+      }
+    }
+  </script>
+</body>
+</html>
