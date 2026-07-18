@@ -1,22 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Projects</title>
-  <link rel="stylesheet" href="style.css">
+  <title>About Us | Orison Teeworks</title>
+  <link rel="icon" href="images/lgm1.png?v=2" type="image/png">
+  <!-- FontAwesome for Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="aboutstyle.css">
 </head>
-
 <body>
 
-<div class="slider">
-  <div class="text">
-    <div>HTML</div>
-    <div>CSS</div>
-    <div>JavaScript</div>
-    <div>React</div>
-  </div>
-</div>
+  <!-- HEADER -->
+  <header>
+    <a href="index.html" class="logo">Orison <span>Teeworks</span></a>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="about-hero">
+    <div>
+      <h1>Orison Teeworks</h1>
+      <p>Where Technology Meets Custom Creativity</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTAINER -->
+  <main class="container">
+    
+    <!-- SECTION 1: T-SHIRT PRINTING PROCESSES -->
+    <h2 class="section-title">How We Print</h2>
+    <div class="printing-grid">
+      
+      <!-- Card 1: DTF -->
+      <div class="tech-card">
+        <i class="fa-solid fa-print"></i>
+        <h3>DTF (Direct to Film)</h3>
+        <p>Yeh modern printing ka king hai. Isme hum advance machines se design ko ek special film par print karke, powder adhesive ki madad se directly fabric par high temperature par heat-press karte hain. Iski wash life behtareen hoti hai aur details sharp aati hain.</p>
+      </div>
+
+      <!-- Card 2: Sublimation -->
+      <div class="tech-card">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <h3>Sublimation Printing</h3>
+        <p>Polyester fabric ke liye sabse best option! Isme ink gas form me convert hokar direct fabric ke particles se merge ho jati hai. Is technology se kiya gaya print kabhi fade nahi hota, na hi crack hota hai — bilkul lightweight feeling deta hai.</p>
+      </div>
+
+      <!-- Card 3: Custom Merch -->
+      <div class="tech-card">
+        <i class="fa-solid fa-shirt"></i>
+        <h3>Premium Quality Tees</h3>
+        <p>Hum sirf standard prints nahi karte, balki comfortable, breathable fabric select karte hain jo premium looks ke sath durable hon. Orison Teeworks ka focus quality aur custom orders par rehta hai.</p>
+      </div>
+
+    </div>
+
+    <!-- SECTION 2: ABOUT THE CREATOR -->
+    <h2 class="section-title">Meet the Creator</h2>
+    <div class="about-me-wrapper">
+      <div class="about-me-img">
+        <!-- Tum yahan apni photo ka path laga sakte ho (assets/aman.jpg) -->
+        <img src="images/Mngr-dsinr.jpg" alt="Aman Jha">
+      </div>
+      <div class="about-me-content">
+        <h3>Aman Jha</h3>
+        <div class="role">Coder, Gamer & Custom Merch Designer</div>
+        <p>Hi, main ek coder aur graphic designer hoon jo hamesha technology aur creativity ko mix karne ka tareeqa dhoondhta rehta hai. <strong>Orison Teeworks</strong> mera ek aisa hi passion project hai jahan hum simple designs ko beautiful wearable art me convert karte hain.</p>
+        <p>Mera goal hai ki main modern design styles, high-quality printing technologies (jaise DTF aur Sublimation) aur responsive web-development ko ek saath mila kar customers ke liye seamless ordering experience taiyaar kar saku.</p>
+        <p>Jab main designs create nahi kar raha hota, tab main competitive coding (jaise CSSBattle) solve karta hoon ya fir BGMI me gameplay explore karta hoon!</p>
+        
+        <div class="social-links">
+          <a href="https://www.instagram.com/orison_tworks/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+          <!-- <a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+          <a href="#" target="_blank"><i class="fa-brands fa-github"></i></a> -->
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">Orison <span>Teeworks</span></div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Orison Teeworks. All rights reserved. Created with ❤️ by Aman.
+    </div>
+  </footer>
 
 </body>
 </html>
